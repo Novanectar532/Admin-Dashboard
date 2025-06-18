@@ -1,42 +1,45 @@
-import { useState, use } from 'react'
-import Applayout from './pages/Applayout'
-import './App.css'
-import React from 'react'
-import { createBrowserRouter, RouterProvider, useNavigate } from 'react-router-dom'
-import Dashboard from './component/Dashbaord/Dashboard'
-import Candiadate from './component/Candidate/Candiadate'
-import Company from './component/Company/Company'
-import Setting from './component/setting/Setting'
+import { useState, use } from "react";
+import Applayout from "./pages/Applayout";
+import "./App.css";
+import React from "react";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  useNavigate,
+} from "react-router-dom";
+import Dashboard from "./component/Dashbaord/Dashboard";
+import Candiadate from "./component/Candidate/Candiadate";
+// import Company from './component/Company/Company'
+import Setting from "./component/setting/Setting";
+import Company from "./component/company/Company";
 
 function App() {
-  
   const router = createBrowserRouter([
     {
-      path: '/',
+      path: "/",
       element: <Applayout />,
       children: [
         {
-          path: '/',
-          element: <Dashboard/>
+          path: "/",
+          element: <Dashboard />,
         },
         {
-          path: '/candidate',
-          element: <Candiadate />
-        },{
-          path: '/company',
-          element: <Company />
-        },{
-          path: '/setting',
-          element: <Setting/>
-        }
-      ]
-    }
-  ])
+          path: "/candidate",
+          element: <Candiadate />,
+        },
+        {
+          path: "/company",
+          element: <Company />,
+        },
+        {
+          path: "/setting",
+          element: <Setting />,
+        },
+      ],
+    },
+  ]);
 
-  return (
-     <RouterProvider router={router} />
-  ) 
-  
+  return <RouterProvider router={router} />;
 }
 
-export default App
+export default App;
